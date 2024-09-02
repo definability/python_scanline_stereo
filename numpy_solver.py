@@ -46,9 +46,9 @@ def solve_numpy(
     penalties_min = empty((height, input_disparity_levels), dtype=float)
 
     x = width - 1
-    current_disparity = 1
+    current_disparity = 0
     subtract(
-        left_image[:, current_disparity], right_image[:, x],
+        left_image[:, x], right_image[:, x],
         out=cache[:, x, current_disparity],
     )
     absolute(
